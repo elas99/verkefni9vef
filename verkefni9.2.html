@@ -1,0 +1,12 @@
+<p>This page turns violet when you hold the V key.</p>
+<script>
+  addEventListener("keydown", function(event) { /*Þegar þú ýtir á takkann breytist liturinn í fjólubláan*/
+    if (event.keyCode == 86) /*Hérna kemur 86 því V er nr 86 á lyklaborðinu*/
+      document.body.style.background = "violet"; /* Breytir allt í fjólublátt*/
+  });
+  addEventListener("keyup", function(event) { /*Þegar þú sleppir takanum breytist liturinn í rauðann*/
+    if (event.keyCode == 86) /*Hérna kemur 86 því V er nr 86 á lyklaborðinu*/
+      document.body.style.background = "red";
+  });
+</script>
+

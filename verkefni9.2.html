@@ -10,3 +10,33 @@
   });
 </script>
 
+
+
+
+
+<style>
+  .progress { /*Nota þetta til að gera útlínurnar og stærðina á blá kassanum*/
+    border: 1px solid blue;
+    width: 100px;
+    position: fixed; /*Fixed til að hafa það alltaf á skjánum*/
+    top: 10px; right: 10px;
+  }
+  .progress > div { /*Nota þetta til að teikna inn í blá kassan þegar scrollað er*/
+    height: 12px;
+    background: blue;
+    width: 0%;
+  }
+  body {
+    height: 2000px;
+  }
+</style>
+<div class="progress"><div></div></div> /*Kalla í boxið*/
+<p>Scroll me...</p>
+<script>
+  var bar = document.querySelector(".progress div"); /*set bar sem css litinn sem teiknar inní kassan*/
+  addEventListener("scroll", function() { /*Þegar þú notar scroll kemur function*/
+    var max = document.body.scrollHeight - innerHeight; /*innerheight variableið gefir okkur default hæðina þannig það væri ekki hægt að scrolla endalaust */
+    var percent = (pageYOffset / max) * 100; /*Margafalda með 100 til að fá prósentuna á hversu langt er hægt að scrolla*/
+    bar.style.width = percent + "%"; /*Teiknar það */
+  });
+</script>
